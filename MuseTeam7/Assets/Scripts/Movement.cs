@@ -9,6 +9,8 @@ public class Movement : MonoBehaviour
 
     public float speed = 12f;
     public float gravity = -19.62f;
+    public float jumpHeight = 3f;
+
     Vector3 velocity;
 
     public Transform groundCheck;
@@ -31,11 +33,14 @@ public class Movement : MonoBehaviour
         float z = Input.GetAxis("Vertical"); // gets the vertical coords
 
         Vector3 move = transform.right * x + transform.forward * z; // movement 
-
         controller.Move(move * speed * Time.deltaTime); // gives move speeds
 
+        if (Input.GetButtonDown("Jump")&& isGrounded)
+		{
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+		}
+        
         velocity.y += gravity * Time.deltaTime; // adds gravity to player model
-
         controller.Move(velocity * Time.deltaTime); // allows falling
     }
 }

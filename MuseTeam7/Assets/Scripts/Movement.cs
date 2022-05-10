@@ -8,6 +8,9 @@ public class Movement : MonoBehaviour
     public CharacterController controller;
 
     public float speed = 12f;
+    public bool isSprinting = false;
+    public float sprintMultiplier;
+
     public float gravity = -19.62f;
     public float jumpHeight = 3f;
 
@@ -17,6 +20,8 @@ public class Movement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     bool isGrounded;
+
+
 
 
     // Update is called once per frame
@@ -35,11 +40,27 @@ public class Movement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z; // movement 
         controller.Move(move * speed * Time.deltaTime); // gives move speeds
 
-        if (Input.GetButtonDown("Jump")&& isGrounded)
+        if (Input.GetButtonDown("Jump")&& isGrounded) // jump mechanic
 		{
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
 		}
-        
+
+        // this is a not working sprint function, still wip
+        //if (Input.GetKey(KeyCode.LeftShift))
+		//{
+        //    isSprinting = true;
+		//}
+        //else
+		//{
+        //    isSprinting = false;
+		//}
+
+        //if (isSprinting == true)
+		//{
+        //    speed *= sprintMultiplier;
+        //    Debug.Log("sprinting");
+		//}
+
         velocity.y += gravity * Time.deltaTime; // adds gravity to player model
         controller.Move(velocity * Time.deltaTime); // allows falling
     }

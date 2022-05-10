@@ -1,1 +1,4 @@
-# MuseTeam7
+# Muse project team 7
+
+- # idea
+    - 

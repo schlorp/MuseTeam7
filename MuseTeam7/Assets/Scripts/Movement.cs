@@ -46,20 +46,25 @@ public class Movement : MonoBehaviour
 		}
 
         // this is a not working sprint function, still wip
-        //if (Input.GetKey(KeyCode.LeftShift))
-		//{
-        //    isSprinting = true;
-		//}
-        //else
-		//{
-        //    isSprinting = false;
-		//}
+        if (Input.GetKey(KeyCode.LeftShift))
+		{
+            isSprinting = true;
+		}
+        else
+		{
+            isSprinting = false;
+            speed = 12f;
+		}
 
-        //if (isSprinting == true)
-		//{
-        //    speed *= sprintMultiplier;
-        //    Debug.Log("sprinting");
-		//}
+        if (isSprinting == true)
+		{
+            speed *= sprintMultiplier;
+            Debug.Log("sprinting");
+            if (speed > 24f)
+			{
+                speed = 24f;
+			}
+		}
 
         velocity.y += gravity * Time.deltaTime; // adds gravity to player model
         controller.Move(velocity * Time.deltaTime); // allows falling

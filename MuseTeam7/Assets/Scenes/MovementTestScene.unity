@@ -357,6 +357,10 @@ MonoBehaviour:
   speed: 12
   isSprinting: 0
   sprintMultiplier: 2
+  isCrouching: 0
+  crouchMultiplier: 0
+  standingHeight: 3.8
+  crouchingHeight: 3.25
   gravity: -9.81
   jumpHeight: 3
   groundCheck: {fileID: 477354611}

@@ -11,6 +11,11 @@ public class Movement : MonoBehaviour
     public bool isSprinting = false;
     public float sprintMultiplier;
 
+    public bool isCrouching = false;
+    public float crouchMultiplier;
+    public float standingHeight = 3.8f;
+    public float crouchingHeight = 3.25f;
+
     public float gravity = -19.62f;
     public float jumpHeight = 3f;
 
@@ -45,8 +50,8 @@ public class Movement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
 		}
 
-        // this is a not working sprint function, still wip
-        if (Input.GetKey(KeyCode.LeftShift))
+        // this is a working sprint function
+        if (Input.GetKey(KeyCode.LeftShift) && isCrouching == false)
 		{
             isSprinting = true;
 		}
@@ -56,13 +61,34 @@ public class Movement : MonoBehaviour
             speed = 12f;
 		}
 
-        if (isSprinting == true)
+        if (Input.GetKey(KeyCode.LeftControl))
+		{
+            isCrouching = true;
+		}
+        else
+		{
+            isCrouching = false;
+            speed = 12f;
+		}
+
+        if (isCrouching == true)
+		{
+            controller.height = crouchingHeight;
+            speed *= crouchMultiplier;
+            Debug.Log("Crouching");
+		}
+        else
+		{
+            controller.height = standingHeight;
+		}
+
+        if (isSprinting == true) // move speed while sprinting
 		{
             speed *= sprintMultiplier;
             Debug.Log("sprinting");
             if (speed > 24f)
 			{
-                speed = 24f;
+               speed = 24f;
 			}
 		}
 

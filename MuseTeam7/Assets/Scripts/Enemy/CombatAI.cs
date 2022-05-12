@@ -5,8 +5,15 @@ using UnityEngine;
 public class CombatAI : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private float detectionradius;
+    [SerializeField] public float detectionradius;
     [SerializeField] private LayerMask detectionmask;
+    [Range(0f, -180f)]
+    [SerializeField] public float minimumdetectionangle;
+    [Range(0f, 180f)]
+    [SerializeField] public float maximumdetectionangle;
+
+    [Header("Gameobjects")]
+    [SerializeField] private GameObject target;
 
     
     void Update()
@@ -23,6 +30,12 @@ public class CombatAI : MonoBehaviour
             if (colliders[i].transform.CompareTag("Player"))
             {
                 Vector3 targetdirection = colliders[i].transform.position - transform.position;
+                float viewableAngle = Vector3.Angle(targetdirection, transform.forward);
+                if (viewableAngle > minimumdetectionangle && viewableAngle < maximumdetectionangle)
+                {
+                    target = colliders[i].gameObject;
+                    Debug.Log(target.name);
+                }
             }
         }
     }

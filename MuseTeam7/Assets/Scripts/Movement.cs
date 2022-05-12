@@ -61,7 +61,7 @@ public class Movement : MonoBehaviour
             speed = 12f;
 		}
 
-        if (Input.GetKey(KeyCode.LeftControl))
+        if (Input.GetKey(KeyCode.C))
 		{
             isCrouching = true;
 		}

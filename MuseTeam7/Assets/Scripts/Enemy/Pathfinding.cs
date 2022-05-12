@@ -5,10 +5,17 @@ using UnityEngine.AI;
 
 public class Pathfinding : MonoBehaviour
 {
-    private NavMeshAgent agent;
-    [SerializeField]private Vector3 waypoint;
-    [SerializeField]private float waypointradius;
-    [SerializeField] private bool validwaypoint;
+
+    [Header("NavMesh")]
+    [SerializeField] private NavMeshAgent agent;
+
+    [Header("Waypoints")]
+    [SerializeField] private float waypointradius;
+    private Vector3 waypoint;
+    private bool validwaypoint;
+
+    [Header("bools")]
+    [SerializeField] private bool raycastshot;
 
     void Start()
     {
@@ -46,26 +53,31 @@ public class Pathfinding : MonoBehaviour
         waypoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
         Vector3 direction = waypoint - transform.position;
-        Physics.Raycast(transform.position, direction, out RaycastHit hit);
-        float distance = hit.distance;
-
-        if (distance < waypointradius)
+        raycastshot = Physics.Raycast(transform.position, direction, out RaycastHit hit);
+        //check if the raycast hit something
+        if (raycastshot)
         {
-            if (hit.transform.tag == "unwalkable")
+            float distance = hit.distance;
+
+            //check if the waypoint is in the wall
+            //if it is it is gonna scan for a new one
+
+            if (distance < waypointradius)
             {
-                validwaypoint = false;
-                FindWaypoint();
+                if (hit.transform.CompareTag("unwalkable"))
+                {
+                    validwaypoint = false;
+                    FindWaypoint();
+                }
+            }
+            else
+            {
+                validwaypoint = true;
             }
         }
-        else if (distance > waypointradius)
+        else
         {
             validwaypoint = true;
         }
-
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(waypoint, 2);
     }
 }

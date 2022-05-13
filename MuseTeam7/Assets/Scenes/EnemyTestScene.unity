@@ -274,7 +274,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 1438d4c8fa528f540813afa2bb7f0e25, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -428,7 +428,6 @@ GameObject:
   - component: {fileID: 1691900012}
   - component: {fileID: 1691900011}
   - component: {fileID: 1691900010}
-  - component: {fileID: 1691900014}
   - component: {fileID: 1691900015}
   - component: {fileID: 1691900016}
   - component: {fileID: 1691900017}
@@ -518,22 +517,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1691900014
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1691900009}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!195 &1691900015
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -543,14 +526,14 @@ NavMeshAgent:
   m_GameObject: {fileID: 1691900009}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5000001
-  m_Speed: 1.5
-  m_Acceleration: 8
+  m_Radius: 1
+  m_Speed: 3
+  m_Acceleration: 1
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 1
@@ -563,14 +546,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691900009}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d35d211e346238f46b508f61196e1019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1691900015}
   waypointradius: 5
   raycastshot: 0
+  seenplayer: 0
 --- !u!114 &1691900017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,13 +566,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc4338db2b6f1242b450408c9875284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionradius: 5
+  detectionradius: 10
   detectionmask:
     serializedVersion: 2
     m_Bits: 64
   minimumdetectionangle: -45
   maximumdetectionangle: 45
-  target: {fileID: 0}
+  sprintspeed: 0
 --- !u!1 &2035041386
 GameObject:
   m_ObjectHideFlags: 0

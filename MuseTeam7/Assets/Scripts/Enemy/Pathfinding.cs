@@ -7,7 +7,7 @@ public class Pathfinding : MonoBehaviour
 {
 
     [Header("NavMesh")]
-    [SerializeField] private NavMeshAgent agent;
+    private NavMeshAgent agent;
 
     [Header("Waypoints")]
     [SerializeField] private float waypointradius;
@@ -16,9 +16,11 @@ public class Pathfinding : MonoBehaviour
 
     [Header("bools")]
     [SerializeField] private bool raycastshot;
+    public bool seenplayer;
 
     void Start()
     {
+        seenplayer = false;
         validwaypoint = false;
         agent = GetComponent<NavMeshAgent>();
         FindWaypoint();
@@ -26,7 +28,11 @@ public class Pathfinding : MonoBehaviour
 
     void Update()
     {
-        Patrolling();
+        //patrols if he has not seen the player
+        if (!seenplayer)
+        {
+            Patrolling();
+        }
     }
 
     private void Patrolling()
@@ -34,7 +40,7 @@ public class Pathfinding : MonoBehaviour
         Vector3 distance = transform.position - waypoint;
         if (validwaypoint)
         {
-            agent.SetDestination(waypoint);// setting the destination once
+            agent.SetDestination(waypoint);// setting the destination once the waypoint is valid
         }
         if (distance.magnitude < 1.5f) //check if distance to walkpoint is under certain number and set a new one if conditions met
         {
@@ -79,5 +85,10 @@ public class Pathfinding : MonoBehaviour
         {
             validwaypoint = true;
         }
+    }
+
+    public void Stop()
+    {
+        agent.Stop();
     }
 }

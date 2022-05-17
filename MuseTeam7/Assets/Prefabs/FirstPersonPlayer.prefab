@@ -125,8 +125,8 @@ GameObject:
   - component: {fileID: 2811399164955306534}
   - component: {fileID: 2811399164955306535}
   - component: {fileID: 2811399164955306529}
-  - component: {fileID: 5183450144529632777}
   - component: {fileID: 4954012180784409038}
+  - component: {fileID: 4546788467774685952}
   m_Layer: 6
   m_Name: FirstPersonPlayer
   m_TagString: Player
@@ -197,21 +197,6 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 128
---- !u!114 &5183450144529632777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2811399164955306532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af1e91f6722722b46be0c6f6a40dbe2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  curHealth: 0
-  healthBar: {fileID: 0}
 --- !u!114 &4954012180784409038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +216,21 @@ MonoBehaviour:
   throwingForce: 10
   PickupRange: 10
   Hand: {fileID: 7554129015224342110}
+--- !u!114 &4546788467774685952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2811399164955306532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a55238723525264493709097fe3d735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starthealth: 100
+  health: 0
+  healthBar: {fileID: 0}
 --- !u!1 &2811399165712341533
 GameObject:
   m_ObjectHideFlags: 0

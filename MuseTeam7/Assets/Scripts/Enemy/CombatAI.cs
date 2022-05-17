@@ -73,6 +73,7 @@ public class CombatAI : MonoBehaviour
 
     private void ChargeAtTarget(GameObject target)
     {
+        //get target and charge towards the target
         Vector3 chargepoint = target.transform.position;
         
         gameObject.transform.LookAt(chargepoint);
@@ -81,10 +82,12 @@ public class CombatAI : MonoBehaviour
             gameObject.transform.Translate(transform.forward * sprintspeed * Time.deltaTime);
         }
 
+        //check if you hit the target
         Collider[] colliders = Physics.OverlapSphere(transform.position, attackradius, detectionmask);
 
         for (int i = 0; i < colliders.Length; i++)
         {
+            //if hit and player start the attack
             if (colliders[i].CompareTag("Player")&& !attacking)
             {
                 move = false;
@@ -95,6 +98,7 @@ public class CombatAI : MonoBehaviour
 
     private IEnumerator Attack(GameObject player)
     {
+        //get the health and deal the damage after a few seconds(will become the seconds of the animation)
         attacking = true;
         PlayerHealth playerHP = player.GetComponent<PlayerHealth>();
 
@@ -102,10 +106,12 @@ public class CombatAI : MonoBehaviour
         //play anim
         playerHP.TakeDamage(damage);
 
+        //stop scanning and can move again
         move = true;
         target = null;
         scan = false;
 
+        //start patrolling again
         pathfinding.seenplayer = false;
         pathfinding.Patrolling();
         pathfinding.Resume();

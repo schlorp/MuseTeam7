@@ -13,11 +13,14 @@ public class CombatAI : MonoBehaviour
     [Range(0f, 180f)]
     [SerializeField] public float maximumdetectionangle;
     [SerializeField] private float sprintspeed;
+    [SerializeField] private float Damage;
+    [SerializeField] private float attackradius;
 
     [Header("Privates")]
     private GameObject target;
     private NavMeshAgent agent;
     private Pathfinding pathfinding;
+    private bool move = true;
 
     private void Start()
     {
@@ -62,7 +65,33 @@ public class CombatAI : MonoBehaviour
         Vector3 chargepoint = target.transform.position;
         
         gameObject.transform.LookAt(chargepoint);
-        gameObject.transform.Translate(transform.forward * sprintspeed * Time.deltaTime);
+        if (move)
+        {
+            gameObject.transform.Translate(transform.forward * sprintspeed * Time.deltaTime);
+        }
 
+        Collider[] colliders = Physics.OverlapSphere(transform.position, attackradius, detectionmask);
+
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].CompareTag("Player"))
+            {
+                move = false;
+                Attack();
+            }
+        }
+    }
+
+    private void Attack()
+    {
+        //get healtcomponent
+        //dealdamage to the players health
+        //do this when healthcomponent is there
+        //play anim
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, attackradius);
     }
 }

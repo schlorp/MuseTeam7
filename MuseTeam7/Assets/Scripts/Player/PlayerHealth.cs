@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         curHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHealth(maxHealth); 
     }
 
     public void TakeDamage(int amount)

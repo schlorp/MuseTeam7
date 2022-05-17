@@ -88,6 +88,9 @@ public class CombatAI : MonoBehaviour
         //dealdamage to the players health
         //do this when healthcomponent is there
         //play anim
+
+        //start move again 
+        //and scan again
     }
 
     private void OnDrawGizmosSelected()

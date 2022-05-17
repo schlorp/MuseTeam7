@@ -18,10 +18,14 @@ public class Pathfinding : MonoBehaviour
     [SerializeField] private bool raycastshot;
     public bool seenplayer;
 
+    [Header("Other")]
+    private CombatAI combatAI;
+
     void Start()
     {
         seenplayer = false;
         validwaypoint = false;
+        combatAI = GetComponent<CombatAI>();
         agent = GetComponent<NavMeshAgent>();
         FindWaypoint();
     }
@@ -35,7 +39,7 @@ public class Pathfinding : MonoBehaviour
         }
     }
 
-    private void Patrolling()
+    public void Patrolling()
     {
         Vector3 distance = transform.position - waypoint;
         if (validwaypoint)
@@ -44,12 +48,18 @@ public class Pathfinding : MonoBehaviour
         }
         if (distance.magnitude < 1.5f) //check if distance to walkpoint is under certain number and set a new one if conditions met
         {
-            validwaypoint=false;
+            combatAI.scan = true;
+            validwaypoint = false;
             FindWaypoint();
         }
     }
 
-    private void FindWaypoint()
+    public void SetWaypoint(Vector3 _waypoint)
+    {
+        waypoint = _waypoint;
+    }
+
+    public void FindWaypoint()
     {
         // grabbing a random position in a circle around the AI
 
@@ -89,6 +99,10 @@ public class Pathfinding : MonoBehaviour
 
     public void Stop()
     {
-        agent.Stop();
+        agent.isStopped = true;
+    }
+    public void Resume()
+    {
+        agent.isStopped=false;
     }
 }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4004788832280072411}
   - component: {fileID: 4004788832280072388}
   - component: {fileID: 4004788832280072389}
+  - component: {fileID: 41705874460325594}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -157,5 +158,22 @@ MonoBehaviour:
   minimumdetectionangle: -45
   maximumdetectionangle: 45
   sprintspeed: 5
-  Damage: 50
+  damage: 50
   attackradius: 2
+  attacktime: 2
+  scan: 1
+--- !u!114 &41705874460325594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4004788832280072413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b99f6859d933a469cf723f086b60c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starthealth: 50
+  health: 0
+  healthBar: {fileID: 0}

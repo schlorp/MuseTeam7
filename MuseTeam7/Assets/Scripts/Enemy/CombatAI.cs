@@ -13,14 +13,19 @@ public class CombatAI : MonoBehaviour
     [Range(0f, 180f)]
     [SerializeField] public float maximumdetectionangle;
     [SerializeField] private float sprintspeed;
-    [SerializeField] private float Damage;
+    [SerializeField] private int damage;
     [SerializeField] private float attackradius;
+    [SerializeField] private float attacktime;
 
     [Header("Privates")]
     private GameObject target;
     private NavMeshAgent agent;
     private Pathfinding pathfinding;
     private bool move = true;
+    private bool attacking = false;
+    
+    [Header("Publics")]
+    [HideInInspector]public bool scan = true;
 
     private void Start()
     {
@@ -31,7 +36,14 @@ public class CombatAI : MonoBehaviour
     void Update()
     {
         //scans for the player every frame
-        ScanningArea();
+        if (scan)
+        {
+            ScanningArea();
+        }
+        if (pathfinding.seenplayer)
+        {
+            ChargeAtTarget(target);
+        }
     }
 
     private void ScanningArea()
@@ -54,7 +66,6 @@ public class CombatAI : MonoBehaviour
                     target = colliders[i].gameObject;
                     pathfinding.Stop();
                     pathfinding.seenplayer = true;
-                    ChargeAtTarget(target);
                 }
             }
         }
@@ -74,24 +85,34 @@ public class CombatAI : MonoBehaviour
 
         for (int i = 0; i < colliders.Length; i++)
         {
-            if (colliders[i].CompareTag("Player"))
+            if (colliders[i].CompareTag("Player")&& !attacking)
             {
                 move = false;
-                Attack();
+                StartCoroutine(Attack(colliders[i].gameObject));
             }
         }
     }
 
-    private void Attack()
+    private IEnumerator Attack(GameObject player)
     {
-        //get healtcomponent
-        //dealdamage to the players health
-        //do this when healthcomponent is there
-        //play anim
+        attacking = true;
+        PlayerHealth playerHP = player.GetComponent<PlayerHealth>();
 
-        //start move again 
-        //and scan again
+        yield return new WaitForSeconds(attacktime);
+        //play anim
+        playerHP.TakeDamage(damage);
+
+        move = true;
+        target = null;
+        scan = false;
+
+        pathfinding.seenplayer = false;
+        pathfinding.Patrolling();
+        pathfinding.Resume();
+        attacking = false;
     }
+
+    
 
     private void OnDrawGizmosSelected()
     {

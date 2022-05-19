@@ -46,8 +46,9 @@ public class Pathfinding : MonoBehaviour
         {
             agent.SetDestination(waypoint);// setting the destination once the waypoint is valid
         }
-        if (distance.magnitude < 1.5f) //check if distance to walkpoint is under certain number and set a new one if conditions met
+        if (distance.magnitude < 3f) //check if distance to walkpoint is under certain number and set a new one if conditions met
         {
+            Debug.Log("new waypoint");
             combatAI.scan = true;
             validwaypoint = false;
             FindWaypoint();

@@ -14,14 +14,14 @@ public class HealthComponent : MonoBehaviour
     void Start()
     {
         health = starthealth;
-        //healthBar.SetMaxHealth(starthealth);
+        healthBar.SetMaxHealth(starthealth);
     }
 
 
     public void TakeDamage(int damage)
     {
         health -= damage;
-        //healthBar.SetHealth(health);
+        healthBar.SetHealth(health);
 
         if (health <= 0)
         {

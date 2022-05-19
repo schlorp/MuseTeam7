@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2811399164955306529, guid: cbd34d64355d9174d8a48b4cd89bbb0c, type: 3}
+      propertyPath: sprintMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2811399164955306534, guid: cbd34d64355d9174d8a48b4cd89bbb0c, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3
@@ -673,7 +677,7 @@ GameObject:
   - component: {fileID: 1612322522}
   - component: {fileID: 1612322521}
   - component: {fileID: 1612322520}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}

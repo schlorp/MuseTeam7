@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Animations;
 
 public class CombatAI : MonoBehaviour
 {
@@ -23,12 +24,14 @@ public class CombatAI : MonoBehaviour
     private Pathfinding pathfinding;
     private bool move = true;
     private bool attacking = false;
+    private Animator animator;
     
     [Header("Publics")]
     [HideInInspector]public bool scan = true;
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         pathfinding = GetComponent<Pathfinding>();
     }
@@ -73,6 +76,7 @@ public class CombatAI : MonoBehaviour
 
     private void ChargeAtTarget(GameObject target)
     {
+        animator.SetBool("Sprint", true);
         //get target and charge towards the target
         Vector3 chargepoint = target.transform.position;
         

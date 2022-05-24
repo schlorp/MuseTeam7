@@ -20,8 +20,22 @@ public class Scenemaster : MonoBehaviour
         return rooms[0];
     }
 
+    public void Home()
+	{
+        SceneManager.LoadScene("ResortScene");
+	}
+
     public void Room1()
     {
         SceneManager.LoadScene("Room1");
+    }
+
+    public void Room2()
+    {
+        SceneManager.LoadScene("Room2");
+    }
+    public void Room3()
+    {
+        SceneManager.LoadScene("Room3");
     }
 }

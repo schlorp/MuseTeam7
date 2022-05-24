@@ -18,10 +18,10 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            FindSpawnpoint();
-        }
+       // if (Input.GetMouseButtonDown(0))
+       // {
+       //     FindSpawnpoint();
+       // }
     }
 
     public void FindSpawnpoint()

@@ -9,4 +9,10 @@ public class EnemyHealth : HealthComponent
         base.Die();
         Destroy(gameObject);
     }
+
+    private void Awake()
+    {
+        isenemy = true;
+    }
 }
+

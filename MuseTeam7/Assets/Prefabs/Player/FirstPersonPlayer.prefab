@@ -187,7 +187,7 @@ MonoBehaviour:
   controller: {fileID: 2811399164955306535}
   speed: 12
   isSprinting: 0
-  sprintMultiplier: 2
+  sprintMultiplier: 1.5
   isCrouching: 0
   crouchMultiplier: 0.5
   standingHeight: 3.8
@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 2811399165712341528}
   - component: {fileID: 2811399165712341529}
   - component: {fileID: 4954012180939861166}
+  - component: {fileID: 4916819319405110040}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -382,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 096da16f8a875244dab840b779997cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSens: 100
+  mouseSens: 200
   playerBody: {fileID: 2811399164955306534}
 --- !u!114 &4954012180939861166
 MonoBehaviour:
@@ -404,6 +405,25 @@ MonoBehaviour:
   defaultIconSize: {x: 25, y: 25}
   defaultInteractIcon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   defaultInteractIconSize: {x: 50, y: 50}
+--- !u!114 &4916819319405110040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2811399165712341533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 023438104d2893043b36e8ac9e3f25cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rayLength: 5
+  _layerMaskInteract:
+    serializedVersion: 2
+    m_Bits: 1024
+  _excluseLayerName: 
+  openDoorKey: 102
+  _crosshair: {fileID: 0}
 --- !u!1 &2811399166271946727
 GameObject:
   m_ObjectHideFlags: 0

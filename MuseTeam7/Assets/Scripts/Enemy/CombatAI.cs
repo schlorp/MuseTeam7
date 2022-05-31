@@ -18,20 +18,22 @@ public class CombatAI : MonoBehaviour
     [SerializeField] private float attackradius;
     [SerializeField] private float attacktime;
 
+
     [Header("Privates")]
     private GameObject target;
-    private NavMeshAgent agent;
     private Pathfinding pathfinding;
     private bool move = true;
     private bool attacking = false;
-    private Animator animator;
-    
+    private NavMeshAgent agent;
+
+
     [Header("Publics")]
     [HideInInspector]public bool scan = true;
+    public Animator animator;
+
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         pathfinding = GetComponent<Pathfinding>();
     }
@@ -94,6 +96,7 @@ public class CombatAI : MonoBehaviour
             //if hit and player start the attack
             if (colliders[i].CompareTag("Player")&& !attacking)
             {
+               
                 move = false;
                 StartCoroutine(Attack(colliders[i].gameObject));
             }
@@ -102,13 +105,15 @@ public class CombatAI : MonoBehaviour
 
     private IEnumerator Attack(GameObject player)
     {
+        animator.SetBool("Attack", true);
         //get the health and deal the damage after a few seconds(will become the seconds of the animation)
         attacking = true;
         PlayerHealth playerHP = player.GetComponent<PlayerHealth>();
 
-        yield return new WaitForSeconds(attacktime);
+        yield return new WaitForSeconds(attacktime - 1);
         //play anim
         playerHP.TakeDamage(damage);
+        yield return new WaitForSeconds(1);
 
         //stop scanning and can move again
         move = true;
@@ -120,6 +125,8 @@ public class CombatAI : MonoBehaviour
         pathfinding.Patrolling();
         pathfinding.Resume();
         attacking = false;
+        animator.SetBool("Attack", false);
+        animator.SetBool("Sprint", false);
     }
 
     

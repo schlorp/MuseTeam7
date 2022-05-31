@@ -11,10 +11,15 @@ public class HealthComponent : MonoBehaviour
     [SerializeField] private HealthBar healthBar;
 
 
+    [HideInInspector]public bool isenemy;
+    
     void Start()
     {
-        health = starthealth;
-        healthBar.SetMaxHealth(starthealth);
+        if (!isenemy)
+        {
+            health = starthealth;
+            healthBar.SetMaxHealth(starthealth);
+        }
     }
 
 

@@ -674,6 +674,7 @@ MonoBehaviour:
   health: 0
   healthBar: {fileID: 0}
   isenemy: 0
+  animator: {fileID: 1182419645}
 --- !u!114 &1022351349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -701,7 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc4338db2b6f1242b450408c9875284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionradius: 30
+  detectionradius: 20
   detectionmask:
     serializedVersion: 2
     m_Bits: 64

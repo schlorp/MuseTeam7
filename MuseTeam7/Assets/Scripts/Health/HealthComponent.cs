@@ -15,9 +15,9 @@ public class HealthComponent : MonoBehaviour
     
     void Start()
     {
+        health = starthealth;
         if (!isenemy)
         {
-            health = starthealth;
             healthBar.SetMaxHealth(starthealth);
         }
     }
@@ -26,7 +26,10 @@ public class HealthComponent : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        healthBar.SetHealth(health);
+        if (!isenemy)
+        {
+            healthBar.SetHealth(health);
+        }
 
         if (health <= 0)
         {

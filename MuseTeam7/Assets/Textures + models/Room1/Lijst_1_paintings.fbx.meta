@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 989d2c711dc36904ab3d4b0e1207cb90
+guid: 7db878e34642fbd469191eec231b2c37
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
@@ -56,7 +56,7 @@ ModelImporter:
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
-    optimizeBones: 1
+    optimizeBones: 0
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -66,7 +66,7 @@ ModelImporter:
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

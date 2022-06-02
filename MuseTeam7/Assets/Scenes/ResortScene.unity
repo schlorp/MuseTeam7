@@ -2889,7 +2889,7 @@ MonoBehaviour:
   secondKey: 0
   thirdDoor: 0
   thirdKey: 0
-  _keyInventory: {fileID: 0}
+  _keyInventory: {fileID: 1600888033}
 --- !u!114 &2104780413
 MonoBehaviour:
   m_ObjectHideFlags: 0

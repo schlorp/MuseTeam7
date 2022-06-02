@@ -29,9 +29,5 @@ public class EnemyHealth : HealthComponent
         isenemy = true;
     }
 
-    private void Awake()
-    {
-        isenemy = true;
-    }
 }
 

@@ -14,7 +14,6 @@ public class HealthComponent : MonoBehaviour
     [HideInInspector] public bool isenemy;
 
 
-    [HideInInspector]public bool isenemy;
     
     void Start()
     {

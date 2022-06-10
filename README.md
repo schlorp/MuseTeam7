@@ -10,16 +10,16 @@ Het spel speelt zich af in een soort resort, waarin guards rondlopen die je moet
 | Product  | Link |
 | ------ |  ------ |
 | Link naar online product backlog (Trello) | [Trello](https://trello.com/b/s1YedWsQ/muse)
-| Logboek (pdf)                             | [Logboek]
+| Logboek (pdf)                             | [Logboek(not yet working)]
 | Game concept doc (pdf)                    | [GameDesignDoc](https://github.com/schlorp/MuseTeam7/blob/main/Documents/Game%20Design%20Document.pdf)
 |<img width=500/>|<img width=300/>|
    
 #### Producten Werkproces 2
 | Product  | Link |
 | ------ |  ------ |
-| Online Product backlog & Sprint backlog + DoD (Trello)    | [Backlog]
-| Sprint retrospective verslagen (pdf)                      | [RetrospectiveVerslagen]
-| Logboek (pdf)                                             | [Logboek]
+| Online Product backlog & Sprint backlog + DoD (Trello)    | [Backlog(not yet working)]
+| Sprint retrospective verslagen (pdf)                      | [RetrospectiveVerslagen(not yet working)]
+| Logboek (pdf)                                             | [Logboek(not yet working)]
 | Opnames sprint retrospectives (Teams opnames)             | [Folder op teams](https://mediacollegeamsterdam.sharepoint.com/:f:/r/teams/C20-F3M8BO-Muse-Team07/Gedeelde%20documenten/Team%2007/Sprint%20Retrospective%20Opnames?csf=1&web=1&e=p3wAys)
 | Opnames standups (Teams opnames)                          | [Folder op teams](https://mediacollegeamsterdam.sharepoint.com/:f:/r/teams/C20-F3M8BO-Muse-Team07/Gedeelde%20documenten/Team%2007/Standups%20Opnames?csf=1&web=1&e=tIw1sq)
 |<img width=500/>|<img width=300/>|
@@ -27,10 +27,10 @@ Het spel speelt zich af in een soort resort, waarin guards rondlopen die je moet
 #### Producten Werkproces 3
 | Product  | Link |
 | ------ |  ------ |
-| Sprint retrospective verslagen (pdf)  | [RetrospectiveVerslagen]
-| Sprint review verslagen (pdf)         | [ReviewVerslagen]
-| Link naar online speelbaar prototype  | [Prototype]
-| Logboek (pdf)                         | [Logboek]
+| Sprint retrospective verslagen (pdf)  | [RetrospectiveVerslagen(not yet working)]
+| Sprint review verslagen (pdf)         | [ReviewVerslagen(not yet working)]
+| Link naar online speelbaar prototype  | [Prototype(not yet working)]
+| Logboek (pdf)                         | [Logboek(not yet working)]
 |<img width=500/>|<img width=300/>|
 
    [Backlog]: <https://trello.com/b/hik72z4q/mythe-2019-voorbeeld-trello>

@@ -8,8 +8,16 @@ public class PauseMenu : MonoBehaviour
 
     public static bool isPaused = false;
     public GameObject pauseMenuUI;
-    // Update is called once per frame
-    void Update()
+    public GameObject ReadyScreen;
+    public GameObject OptionsUI;
+	private void Start()
+	{
+        ReadyScreen.SetActive(true);
+        Freeze();
+    }
+
+	// Update is called once per frame
+	void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
 		{
@@ -32,6 +40,13 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    void Freeze() // freezes game on start
+	{
+        Time.timeScale = 0f;
+        isPaused = true;
+        Cursor.lockState = CursorLockMode.Confined;
+	}
+     
     void Pause()
 	{
         pauseMenuUI.SetActive(true);
@@ -52,4 +67,29 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Quiting!");
         Application.Quit();
 	}
+    public void Ready()
+	{
+        Debug.Log("Start Game");
+        ReadyScreen.SetActive(false);
+        Resume();
+    }
+
+    public void Restart()
+	{
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("resetting");
+	}
+
+    public void Opties()
+	{
+        OptionsUI.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    public void CloseOptions()
+	{
+        OptionsUI.SetActive(false);
+    }
 }

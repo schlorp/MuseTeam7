@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundMask;
     bool isGrounded;
 
+ 
+
     //[Header("Interaction")]
  
 
@@ -40,9 +42,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
-
-
         //movement stuff 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); // checks if player is on the ground
 

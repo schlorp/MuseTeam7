@@ -12,7 +12,7 @@ public class MouseLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked; // locks mouse in the window so you wont click outside the window
+       Cursor.lockState = CursorLockMode.Locked; // locks mouse in the window so you wont click outside the window
     }
 
     // Update is called once per frame

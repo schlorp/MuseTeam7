@@ -20,8 +20,32 @@ public class Scenemaster : MonoBehaviour
         return rooms[0];
     }
 
+    public void Home()
+	{
+        SceneManager.LoadScene("ResortScene");
+	}
+    public void Options()
+	{
+        //SceneManager.LoadScene("Options");
+        Debug.Log("Loads options");
+	}
+
     public void Room1()
     {
         SceneManager.LoadScene("Room1");
+    }
+
+    public void Room2()
+    {
+        SceneManager.LoadScene("Room2");
+    }
+    public void Room3()
+    {
+        SceneManager.LoadScene("Room3");
+    }
+    public void Exit() // exits the game
+    {
+        Debug.Log("Quiting!");
+        Application.Quit();
     }
 }

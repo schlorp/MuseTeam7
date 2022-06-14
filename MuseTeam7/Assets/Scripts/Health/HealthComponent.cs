@@ -10,8 +10,10 @@ public class HealthComponent : MonoBehaviour
     [SerializeField] private int health;
     [SerializeField] private HealthBar healthBar;
 
+    [Header("Public")]
+    [HideInInspector] public bool isenemy;
 
-    [HideInInspector]public bool isenemy;
+
     
     void Start()
     {

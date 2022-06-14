@@ -28,4 +28,6 @@ public class EnemyHealth : HealthComponent
         agent = GetComponent<NavMeshAgent>();
         isenemy = true;
     }
+
 }
+

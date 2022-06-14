@@ -46,7 +46,7 @@ public class Pathfinding : MonoBehaviour
         {
             agent.SetDestination(waypoint);// setting the destination once the waypoint is valid
         }
-        if (distance.magnitude < 3f) //check if distance to walkpoint is under certain number and set a new one if conditions met
+        if (distance.magnitude < 2f) //check if distance to walkpoint is under certain number and set a new one if conditions met
         {
             Debug.Log("new waypoint");
             combatAI.scan = true;
@@ -71,6 +71,7 @@ public class Pathfinding : MonoBehaviour
 
         Vector3 direction = waypoint - transform.position;
         raycastshot = Physics.Raycast(transform.position, direction, out RaycastHit hit);
+        Debug.DrawRay(transform.position, direction, Color.red);
         //check if the raycast hit something
         if (raycastshot)
         {

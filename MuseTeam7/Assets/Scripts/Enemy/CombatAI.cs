@@ -25,6 +25,7 @@ public class CombatAI : MonoBehaviour
     private bool move = true;
     private bool attacking = false;
     private NavMeshAgent agent;
+    private PlayerController controller;
 
 
     [Header("Publics")]
@@ -36,6 +37,8 @@ public class CombatAI : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         pathfinding = GetComponent<Pathfinding>();
+        controller = FindObjectOfType<PlayerController>();
+        Debug.Log(controller);
     }
 
     void Update()
@@ -67,10 +70,19 @@ public class CombatAI : MonoBehaviour
                 float viewableAngle = Vector3.Angle(targetdirection, transform.forward);
                 if (viewableAngle > minimumdetectionangle && viewableAngle < maximumdetectionangle)
                 {
-                    //starts charging at the player
-                    target = colliders[i].gameObject;
-                    pathfinding.Stop();
-                    pathfinding.seenplayer = true;
+                    //check if there is a obejct in the view
+                    Ray ray = new Ray(transform.position, targetdirection);
+                    if(Physics.Raycast(ray, out RaycastHit hit))
+                    {
+                        Debug.DrawRay(transform.position,targetdirection, Color.red);
+                        if (!hit.transform.CompareTag("unwalkable"))
+                        {
+                            //starts charging at the player
+                            target = colliders[i].gameObject;
+                            pathfinding.Stop();
+                            pathfinding.seenplayer = true;
+                        }
+                    }
                 }
             }
         }
@@ -112,6 +124,7 @@ public class CombatAI : MonoBehaviour
     private IEnumerator Attack(GameObject player)
     {
         animator.SetBool("Attack", true);
+        controller.enabled = false;
         //get the health and deal the damage after a few seconds(will become the seconds of the animation)
         attacking = true;
         PlayerHealth playerHP = player.GetComponent<PlayerHealth>();
@@ -133,6 +146,7 @@ public class CombatAI : MonoBehaviour
         attacking = false;
         animator.SetBool("Attack", false);
         animator.SetBool("Sprint", false);
+        controller.enabled = true;
     }
 
     

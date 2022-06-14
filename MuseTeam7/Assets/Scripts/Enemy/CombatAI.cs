@@ -81,11 +81,17 @@ public class CombatAI : MonoBehaviour
         animator.SetBool("Sprint", true);
         //get target and charge towards the target
         Vector3 chargepoint = target.transform.position;
-        
+
         gameObject.transform.LookAt(chargepoint);
+
+        /*
+        Vector3 dir = chargepoint - gameObject.transform.position;
+        Quaternion torotation = Quaternion.FromToRotation(transform.forward, dir);
+        transform.rotation = torotation;
+        */
         if (move)
         {
-            gameObject.transform.Translate(transform.forward * sprintspeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, chargepoint, sprintspeed * Time.deltaTime);
         }
 
         //check if you hit the target

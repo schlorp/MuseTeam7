@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-   public int index = -1;
+   public int index = -1; // so we know if its assigned
 }

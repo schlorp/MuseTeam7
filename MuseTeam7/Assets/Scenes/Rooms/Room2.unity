@@ -584,6 +584,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c8c3b4ad52d974bf3b9ae45112ba08ad, type: 3}
+      propertyPath: m_TagString
+      value: unwalkable
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c8c3b4ad52d974bf3b9ae45112ba08ad, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
@@ -7393,7 +7397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3244640292156326744, guid: 37829d2fdd2a5f7459ae8a5f2ba5abe4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.779453
+      value: 22.8
       objectReference: {fileID: 0}
     - target: {fileID: 3244640292156326744, guid: 37829d2fdd2a5f7459ae8a5f2ba5abe4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7422,6 +7426,14 @@ PrefabInstance:
     - target: {fileID: 3244640292156326744, guid: 37829d2fdd2a5f7459ae8a5f2ba5abe4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3244640292156326746, guid: 37829d2fdd2a5f7459ae8a5f2ba5abe4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3244640292156326746, guid: 37829d2fdd2a5f7459ae8a5f2ba5abe4, type: 3}
+      propertyPath: waypointradius
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3244640292156326748, guid: 37829d2fdd2a5f7459ae8a5f2ba5abe4, type: 3}
       propertyPath: m_Name

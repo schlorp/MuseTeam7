@@ -54,7 +54,7 @@ MonoBehaviour:
     m_Bits: 64
   minimumdetectionangle: -25
   maximumdetectionangle: 25
-  sprintspeed: 5
+  sprintspeed: 20
   damage: 50
   attackradius: 2
   attacktime: 2.6

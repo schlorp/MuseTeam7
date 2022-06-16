@@ -23,52 +23,52 @@ public class interactor : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        
+
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 2, interactableLayermask))
-		{
-            if(hit.collider.GetComponent<Interactable>() != false)
-			{
+        {
+            if (hit.collider.GetComponent<Interactable>() != false)
+            {
                 if (interactable == null || interactable.ID != hit.collider.GetComponent<Interactable>().ID)
-				{
+                {
                     interactable = hit.collider.GetComponent<Interactable>();
                     interactImage.sprite = interactable.interactIcon;
                     Debug.Log("New interatable");
-				}
+                }
 
                 if (interactable.interactIcon != null)
-				{
+                {
                     interactImage.sprite = interactable.interactIcon;
                     if (interactable.iconSize == Vector2.zero)
-					{
+                    {
                         interactImage.rectTransform.sizeDelta = defaultInteractIconSize;
-					}
-					else
-					{
+                    }
+                    else
+                    {
                         interactImage.rectTransform.sizeDelta = interactable.iconSize;
-					} 
-                   
-				}
+                    }
+
+                }
                 else
-				{
+                {
                     interactImage.sprite = defaultInteractIcon;
                     interactImage.rectTransform.sizeDelta = defaultInteractIconSize;
-				}
+                }
 
                 if (Input.GetKeyDown(KeyCode.F))
-				{
+                {
                     Debug.Log("aah1");
                     interactable.onInteract.Invoke();
-				}
-			}
+                }
+            }
         }
         else
-		{
+        {
             if (interactImage.sprite != defaultIcon)
-			{
+            {
                 interactImage.sprite = defaultIcon;
                 interactImage.rectTransform.sizeDelta = defaultIconSize;
                 Debug.Log("default");
             }
-		}
+        }
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Animations;
 
 public class CombatAI : MonoBehaviour
 {
@@ -17,20 +18,27 @@ public class CombatAI : MonoBehaviour
     [SerializeField] private float attackradius;
     [SerializeField] private float attacktime;
 
+
     [Header("Privates")]
     private GameObject target;
-    private NavMeshAgent agent;
     private Pathfinding pathfinding;
     private bool move = true;
     private bool attacking = false;
-    
+    private NavMeshAgent agent;
+    private PlayerController controller;
+
+
     [Header("Publics")]
     [HideInInspector]public bool scan = true;
+    public Animator animator;
+
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         pathfinding = GetComponent<Pathfinding>();
+        controller = FindObjectOfType<PlayerController>();
+        Debug.Log(controller);
     }
 
     void Update()
@@ -62,10 +70,19 @@ public class CombatAI : MonoBehaviour
                 float viewableAngle = Vector3.Angle(targetdirection, transform.forward);
                 if (viewableAngle > minimumdetectionangle && viewableAngle < maximumdetectionangle)
                 {
-                    //starts charging at the player
-                    target = colliders[i].gameObject;
-                    pathfinding.Stop();
-                    pathfinding.seenplayer = true;
+                    //check if there is a obejct in the view
+                    Ray ray = new Ray(transform.position, targetdirection);
+                    if(Physics.Raycast(ray, out RaycastHit hit))
+                    {
+                        Debug.DrawRay(transform.position,targetdirection, Color.red);
+                        if (!hit.transform.CompareTag("unwalkable"))
+                        {
+                            //starts charging at the player
+                            target = colliders[i].gameObject;
+                            pathfinding.Stop();
+                            pathfinding.seenplayer = true;
+                        }
+                    }
                 }
             }
         }
@@ -73,13 +90,20 @@ public class CombatAI : MonoBehaviour
 
     private void ChargeAtTarget(GameObject target)
     {
+        animator.SetBool("Sprint", true);
         //get target and charge towards the target
         Vector3 chargepoint = target.transform.position;
-        
+
         gameObject.transform.LookAt(chargepoint);
+
+        /*
+        Vector3 dir = chargepoint - gameObject.transform.position;
+        Quaternion torotation = Quaternion.FromToRotation(transform.forward, dir);
+        transform.rotation = torotation;
+        */
         if (move)
         {
-            gameObject.transform.Translate(transform.forward * sprintspeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, chargepoint, sprintspeed * Time.deltaTime);
         }
 
         //check if you hit the target
@@ -90,6 +114,7 @@ public class CombatAI : MonoBehaviour
             //if hit and player start the attack
             if (colliders[i].CompareTag("Player")&& !attacking)
             {
+               
                 move = false;
                 StartCoroutine(Attack(colliders[i].gameObject));
             }
@@ -98,13 +123,16 @@ public class CombatAI : MonoBehaviour
 
     private IEnumerator Attack(GameObject player)
     {
+        animator.SetBool("Attack", true);
+        controller.enabled = false;
         //get the health and deal the damage after a few seconds(will become the seconds of the animation)
         attacking = true;
         PlayerHealth playerHP = player.GetComponent<PlayerHealth>();
 
-        yield return new WaitForSeconds(attacktime);
+        yield return new WaitForSeconds(attacktime - 1);
         //play anim
         playerHP.TakeDamage(damage);
+        yield return new WaitForSeconds(1);
 
         //stop scanning and can move again
         move = true;
@@ -116,6 +144,9 @@ public class CombatAI : MonoBehaviour
         pathfinding.Patrolling();
         pathfinding.Resume();
         attacking = false;
+        animator.SetBool("Attack", false);
+        animator.SetBool("Sprint", false);
+        controller.enabled = true;
     }
 
     

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - unwalkable
   - Enemy
+  - InteractiveObject
+  - Door
+  - Key
   layers:
   - Default
   - TransparentFX

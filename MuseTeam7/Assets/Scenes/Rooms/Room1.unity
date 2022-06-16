@@ -1190,6 +1190,14 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 5933665781234494896, guid: dc56fa0b5c727054787a3b243382bb0b, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933665781234494896, guid: dc56fa0b5c727054787a3b243382bb0b, type: 3}
+      propertyPath: m_TagString
+      value: InteractiveObject
+      objectReference: {fileID: 0}
     - target: {fileID: 5933665781237249332, guid: dc56fa0b5c727054787a3b243382bb0b, type: 3}
       propertyPath: m_IsActive
       value: 1

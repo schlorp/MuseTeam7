@@ -21,7 +21,7 @@ public class Pathfinding : MonoBehaviour
     [Header("Other")]
     private CombatAI combatAI;
 
-    void Start()
+    void Awake()
     {
         seenplayer = false;
         validwaypoint = false;
@@ -36,6 +36,10 @@ public class Pathfinding : MonoBehaviour
         if (!seenplayer)
         {
             Patrolling();
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            FindWaypoint();
         }
     }
 

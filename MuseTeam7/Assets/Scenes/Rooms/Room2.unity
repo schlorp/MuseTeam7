@@ -6920,6 +6920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rooms: []
+  InvData: {fileID: 11400000, guid: 9620eb7b54201c449b1e200d254276c4, type: 2}
 --- !u!4 &1802183217
 Transform:
   m_ObjectHideFlags: 0

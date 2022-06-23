@@ -43,4 +43,12 @@ public class HealthComponent : MonoBehaviour
     {
 
     }
+    public int GetHealth()
+    {
+        return health;
+    }
+    public void SetHealth(int _health)
+    {
+        health = _health;
+    }
 }

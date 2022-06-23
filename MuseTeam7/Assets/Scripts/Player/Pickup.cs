@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    [SerializeField] private LayerMask PickupLayer;
-    [SerializeField] private Camera PlayerCam;
-    [SerializeField] private float throwingForce; 
-    [SerializeField] private float PickupRange;
-    [SerializeField] private Transform Hand;
+    [SerializeField] private LayerMask _PickupLayer;
+    [SerializeField] private Camera _PlayerCam;
+    [SerializeField] private float _throwingForce; 
+    [SerializeField] private float _PickupRange;
+    [SerializeField] private Transform _Hand;
 
     private Rigidbody CurrentObjrb;
     private Collider CurrentObjCol;
@@ -18,9 +18,9 @@ public class Pickup : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
 		{
-            Ray Pickupray = new Ray(PlayerCam.transform.position, PlayerCam.transform.forward);
+            Ray Pickupray = new Ray(_PlayerCam.transform.position, _PlayerCam.transform.forward);
 
-            if (Physics.Raycast(Pickupray, out RaycastHit hitInfo, PickupRange, PickupLayer))
+            if (Physics.Raycast(Pickupray, out RaycastHit hitInfo, _PickupRange, _PickupLayer))
 			{
                 if (CurrentObjrb)
 				{
@@ -61,7 +61,7 @@ public class Pickup : MonoBehaviour
                 CurrentObjrb.isKinematic = false;
                 CurrentObjCol.enabled = true;
 
-                CurrentObjrb.AddForce(PlayerCam.transform.forward * throwingForce, ForceMode.Impulse);
+                CurrentObjrb.AddForce(_PlayerCam.transform.forward * _throwingForce, ForceMode.Impulse);
 
                 CurrentObjrb = null;
                 CurrentObjCol = null;
@@ -70,8 +70,8 @@ public class Pickup : MonoBehaviour
 
         if (CurrentObjrb)
 		{
-            CurrentObjrb.position = Hand.position;
-            CurrentObjrb.rotation = Hand.rotation;
+            CurrentObjrb.position = _Hand.position;
+            CurrentObjrb.rotation = _Hand.rotation;
 		}
 
     }

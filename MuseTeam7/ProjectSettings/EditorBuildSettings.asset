@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu-UI/Menu.unity
+    guid: 0f7a39bc87978ab498070bf730f179c6
+  - enabled: 1
     path: Assets/Scenes/ResortScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
@@ -17,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rooms/Room3.unity
     guid: 49a59c4feb624844ba00793a47adf906
+  - enabled: 1
+    path: Assets/Scenes/Menu-UI/Options.unity
+    guid: 0433e19e59db40f48a02796ad999a366
   m_configObjects: {}

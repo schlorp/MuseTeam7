@@ -2,35 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Animations;
 
 public class CombatAI : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] public float detectionradius;
-    [SerializeField] private LayerMask detectionmask;
+    [SerializeField] private LayerMask _detectionmask;
     [Range(0f, -180f)]
     [SerializeField] public float minimumdetectionangle;
     [Range(0f, 180f)]
     [SerializeField] public float maximumdetectionangle;
     [SerializeField] private float sprintspeed;
-    [SerializeField] private int damage;
-    [SerializeField] private float attackradius;
-    [SerializeField] private float attacktime;
+    [SerializeField] private int _damage;
+    [SerializeField] private float _attackradius;
+    [SerializeField] private float _attacktime;
+
 
     [Header("Privates")]
-    private GameObject target;
-    private NavMeshAgent agent;
-    private Pathfinding pathfinding;
-    private bool move = true;
-    private bool attacking = false;
-    
+    private GameObject _target;
+    private Pathfinding _pathfinding;
+    private bool _move = true;
+    private bool _attacking = false;
+    private NavMeshAgent _agent;
+    private PlayerController _controller;
+
+
     [Header("Publics")]
     [HideInInspector]public bool scan = true;
+    public Animator animator;
+
 
     private void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        pathfinding = GetComponent<Pathfinding>();
+        _agent = GetComponent<NavMeshAgent>();
+        _pathfinding = GetComponent<Pathfinding>();
+        _controller = FindObjectOfType<PlayerController>();
+        Debug.Log(_controller);
     }
 
     void Update()
@@ -40,16 +48,16 @@ public class CombatAI : MonoBehaviour
         {
             ScanningArea();
         }
-        if (pathfinding.seenplayer)
+        if (_pathfinding.seenplayer)
         {
-            ChargeAtTarget(target);
+            ChargeAtTarget(_target);
         }
     }
 
     private void ScanningArea()
     {
         //the list of obejcts inside the range and in the layermask
-        Collider[] colliders = Physics.OverlapSphere(transform.position, detectionradius, detectionmask);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, detectionradius, _detectionmask);
         //loop through them to get player
         for(int i = 0; i < colliders.Length; i++)
         {
@@ -62,10 +70,19 @@ public class CombatAI : MonoBehaviour
                 float viewableAngle = Vector3.Angle(targetdirection, transform.forward);
                 if (viewableAngle > minimumdetectionangle && viewableAngle < maximumdetectionangle)
                 {
-                    //starts charging at the player
-                    target = colliders[i].gameObject;
-                    pathfinding.Stop();
-                    pathfinding.seenplayer = true;
+                    //check if there is a obejct in the view
+                    Ray ray = new Ray(transform.position, targetdirection);
+                    if(Physics.Raycast(ray, out RaycastHit hit))
+                    {
+                        Debug.DrawRay(transform.position,targetdirection, Color.red);
+                        if (!hit.transform.CompareTag("unwalkable"))
+                        {
+                            //starts charging at the player
+                            _target = colliders[i].gameObject;
+                            _pathfinding.Stop();
+                            _pathfinding.seenplayer = true;
+                        }
+                    }
                 }
             }
         }
@@ -73,24 +90,32 @@ public class CombatAI : MonoBehaviour
 
     private void ChargeAtTarget(GameObject target)
     {
+        animator.SetBool("Sprint", true);
         //get target and charge towards the target
         Vector3 chargepoint = target.transform.position;
-        
+
         gameObject.transform.LookAt(chargepoint);
-        if (move)
+
+        /*
+        Vector3 dir = chargepoint - gameObject.transform.position;
+        Quaternion torotation = Quaternion.FromToRotation(transform.forward, dir);
+        transform.rotation = torotation;
+        */
+        if (_move)
         {
-            gameObject.transform.Translate(transform.forward * sprintspeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, chargepoint, sprintspeed * Time.deltaTime);
         }
 
         //check if you hit the target
-        Collider[] colliders = Physics.OverlapSphere(transform.position, attackradius, detectionmask);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, _attackradius, _detectionmask);
 
         for (int i = 0; i < colliders.Length; i++)
         {
             //if hit and player start the attack
-            if (colliders[i].CompareTag("Player")&& !attacking)
+            if (colliders[i].CompareTag("Player")&& !_attacking)
             {
-                move = false;
+               
+                _move = false;
                 StartCoroutine(Attack(colliders[i].gameObject));
             }
         }
@@ -98,30 +123,36 @@ public class CombatAI : MonoBehaviour
 
     private IEnumerator Attack(GameObject player)
     {
+        animator.SetBool("Attack", true);
+        _controller.enabled = false;
         //get the health and deal the damage after a few seconds(will become the seconds of the animation)
-        attacking = true;
+        _attacking = true;
         PlayerHealth playerHP = player.GetComponent<PlayerHealth>();
 
-        yield return new WaitForSeconds(attacktime);
+        yield return new WaitForSeconds(_attacktime - 1);
         //play anim
-        playerHP.TakeDamage(damage);
+        playerHP.TakeDamage(_damage);
+        yield return new WaitForSeconds(1);
 
         //stop scanning and can move again
-        move = true;
-        target = null;
+        _move = true;
+        _target = null;
         scan = false;
 
         //start patrolling again
-        pathfinding.seenplayer = false;
-        pathfinding.Patrolling();
-        pathfinding.Resume();
-        attacking = false;
+        _pathfinding.seenplayer = false;
+        _pathfinding.Patrolling();
+        _pathfinding.Resume();
+        _attacking = false;
+        animator.SetBool("Attack", false);
+        animator.SetBool("Sprint", false);
+        _controller.enabled = true;
     }
 
     
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireSphere(transform.position, attackradius);
+        Gizmos.DrawWireSphere(transform.position, _attackradius);
     }
 }

@@ -20,6 +20,7 @@ public class Scenemaster : MonoBehaviour
 
     public void Home()
 	{
+        FindObjectOfType<audioManager>().Play("ResortBack");
         SceneManager.LoadScene("ResortScene");
         EditData();
     }

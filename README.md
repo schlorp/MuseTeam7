@@ -18,7 +18,7 @@ Het spel speelt zich af in een soort resort, waarin guards rondlopen die je moet
 | Product  | Link |
 | ------ |  ------ |
 | Online Product backlog & Sprint backlog + DoD (Trello)    | [Backlog](https://trello.com/b/s1YedWsQ/muse)
-| Sprint retrospective verslagen (pdf)                      | [RetrospectiveVerslagen(not yet working)]
+| Sprint retrospective verslagen (pdf)                      | [RetrospectiveVerslagen](https://github.com/schlorp/MuseTeam7/blob/main/Documents/Sprint%20retrospectives.pdf)
 | Logboek (pdf)                                             | [Logboek](https://github.com/schlorp/MuseTeam7/blob/main/Documents/Logboek%20Muse%20Project.pdf)
 | Opnames sprint retrospectives (Teams opnames)             | [Folder op teams](https://mediacollegeamsterdam.sharepoint.com/:f:/r/teams/C20-F3M8BO-Muse-Team07/Gedeelde%20documenten/Team%2007/Sprint%20Retrospective%20Opnames?csf=1&web=1&e=p3wAys)
 | Opnames standups (Teams opnames)                          | [Folder op teams](https://mediacollegeamsterdam.sharepoint.com/:f:/r/teams/C20-F3M8BO-Muse-Team07/Gedeelde%20documenten/Team%2007/Standups%20Opnames?csf=1&web=1&e=tIw1sq)
@@ -27,8 +27,8 @@ Het spel speelt zich af in een soort resort, waarin guards rondlopen die je moet
 #### Producten Werkproces 3
 | Product  | Link |
 | ------ |  ------ |
-| Sprint retrospective verslagen (pdf)  | [RetrospectiveVerslagen(not yet working)]
-| Sprint review verslagen (pdf)         | [ReviewVerslagen(not yet working)]
+| Sprint retrospective verslagen (pdf)  | [RetrospectiveVerslagen](https://github.com/schlorp/MuseTeam7/blob/main/Documents/Sprint%20retrospectives.pdf)
+| Sprint review verslagen (pdf)         | [ReviewVerslagen](https://github.com/schlorp/MuseTeam7/blob/main/Documents/Sprint%20reviews.pdf)
 | Link naar online speelbaar prototype  | [build](https://github.com/schlorp/MuseTeam7/blob/Room1EnemyInteraction/Builds/Build3.7z)
 | Logboek (pdf)                         | [Logboek](https://github.com/schlorp/MuseTeam7/blob/main/Documents/Logboek%20Muse%20Project.pdf)
 |<img width=500/>|<img width=300/>|

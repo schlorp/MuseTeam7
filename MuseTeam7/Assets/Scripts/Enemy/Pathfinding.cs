@@ -28,6 +28,9 @@ public class Pathfinding : MonoBehaviour
         combatAI = GetComponent<CombatAI>();
         agent = GetComponent<NavMeshAgent>();
         FindWaypoint();
+        FindObjectOfType<audioManager>().Play("EnemyWalk");
+
+
     }
 
     void Update()

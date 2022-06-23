@@ -18,13 +18,20 @@ public class DoorOpener : MonoBehaviour
                 if (hit.collider.CompareTag("Door"))
 				{
                     DoorHandler doorScript = hit.collider.transform.parent.GetComponent<DoorHandler>();
-                    if (doorScript == null) return;
-
+                    if (doorScript == null)
+                    {
+                        return;
+                    }
                     if (Inventory.keys[doorScript.index] == true)
                     {
+                        
                         doorScript.ChangeDoorState();
                     }
-				}
+                    else
+					{
+                        FindObjectOfType<audioManager>().Play("Locked");
+                    }
+                }
                 else if (hit.collider.CompareTag("Key"))
 				{
                     Inventory.keys[hit.collider.GetComponent<Key>().index] = true; // looks what index key has and changes the bool to true

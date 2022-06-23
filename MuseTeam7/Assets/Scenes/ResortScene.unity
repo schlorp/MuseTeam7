@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 8b65e9fb0723d124ca6cbd4e0d9f0b03, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 684eea51ff933a14f8ce45ec0a61253c, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: ba2ff971818e4de41be49e24f36d72b0, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -5317,7 +5317,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 1.02e-43, y: NaN, z: 0, w: 5.1450655e+13}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -9505,7 +9505,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1350694445 stripped
 GameObject:

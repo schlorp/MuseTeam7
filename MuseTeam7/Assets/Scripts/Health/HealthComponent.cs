@@ -35,6 +35,7 @@ public class HealthComponent : MonoBehaviour
 
         if (_health <= 0)
         {
+            FindObjectOfType<audioManager>().Play("PlayerDeath");
             Die();
         }
     }

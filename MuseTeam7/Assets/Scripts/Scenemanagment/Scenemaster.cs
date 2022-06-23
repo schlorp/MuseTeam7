@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Scenemaster : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private string[] rooms;
+    [SerializeField] private string[] _rooms;
 
 
     [Header("Private")]

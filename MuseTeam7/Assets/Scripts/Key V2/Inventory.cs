@@ -4,11 +4,21 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-	public static bool[] keys = new bool[3];
+	public static bool[] keys;
 
 	private void Start()
 	{
+		Debug.Log(keys.Length);
 		keys[0] = true;
 	}
+
+	public bool[] Getkeys()
+    {
+		return keys;
+    }
+	public void Setkeys(bool[] _keys)
+    {
+		keys = _keys;
+    }
 
 }

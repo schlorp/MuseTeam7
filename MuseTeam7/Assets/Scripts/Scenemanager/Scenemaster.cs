@@ -8,22 +8,21 @@ public class Scenemaster : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private string[] rooms;
 
-    public string GetRoom(int roomID)
+
+    [Header("Private")]
+    private GameObject player;
+
+    private void Start()
     {
-        for (int i = 0; i < rooms.Length; i++)
-        {
-            if (i == roomID)
-            {
-                SceneManager.LoadScene(rooms[i]);
-            }
-        }
-        return rooms[0];
+        player = GameObject.FindGameObjectWithTag("Player");
+        SetData();
     }
 
     public void Home()
 	{
         SceneManager.LoadScene("ResortScene");
-	}
+        EditData();
+    }
     public void Options()
 	{
         //SceneManager.LoadScene("Options");
@@ -33,19 +32,34 @@ public class Scenemaster : MonoBehaviour
     public void Room1()
     {
         SceneManager.LoadScene("Room1");
+        EditData();
     }
 
     public void Room2()
     {
         SceneManager.LoadScene("Room2");
+        EditData();
     }
     public void Room3()
     {
         SceneManager.LoadScene("Room3");
+        EditData();
     }
     public void Exit() // exits the game
     {
         Debug.Log("Quiting!");
         Application.Quit();
+    }
+
+    public void EditData()
+    {
+        InventoryObject.instance.HP = player.GetComponent<PlayerHealth>().GetHealth();
+        InventoryObject.instance.keys = player.GetComponentInChildren<Inventory>().Getkeys();
+    }
+
+    public void SetData()
+    {
+        player.GetComponent<PlayerHealth>().SetHealth(InventoryObject.instance.HP);
+        player.GetComponentInChildren<Inventory>().Setkeys(InventoryObject.instance.keys);
     }
 }

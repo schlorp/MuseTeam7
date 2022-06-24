@@ -6,9 +6,9 @@ public class HealthComponent : MonoBehaviour
 {
 
     [Header("Settings")]
-    [SerializeField] private int starthealth;
-    [SerializeField] private int health;
-    [SerializeField] private HealthBar healthBar;
+    [SerializeField] private int _starthealth;
+    [SerializeField] private int _health;
+    [SerializeField] private HealthBar _healthBar;
 
     [Header("Public")]
     [HideInInspector] public bool isenemy;
@@ -17,24 +17,25 @@ public class HealthComponent : MonoBehaviour
     
     void Start()
     {
-        health = starthealth;
+        _health = _starthealth;
         if (!isenemy)
         {
-            healthBar.SetMaxHealth(starthealth);
+            _healthBar.SetMaxHealth(_starthealth);
         }
     }
 
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        _health -= damage;
         if (!isenemy)
         {
-            healthBar.SetHealth(health);
+            _healthBar.SetHealth(_health);
         }
 
-        if (health <= 0)
+        if (_health <= 0)
         {
+            FindObjectOfType<audioManager>().Play("PlayerDeath");
             Die();
         }
     }
@@ -45,10 +46,10 @@ public class HealthComponent : MonoBehaviour
     }
     public int GetHealth()
     {
-        return health;
+        return _health;
     }
     public void SetHealth(int _health)
     {
-        health = _health;
+        this._health = _health;
     }
 }

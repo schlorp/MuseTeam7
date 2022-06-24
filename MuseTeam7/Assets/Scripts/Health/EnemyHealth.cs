@@ -8,24 +8,24 @@ public class EnemyHealth : HealthComponent
 {
     public Animator animator;
 
-    private Pathfinding path;
-    private CombatAI com;
-    private NavMeshAgent agent;
+    private Pathfinding _path;
+    private CombatAI _com;
+    private NavMeshAgent _agent;
     protected override void Die()
     {
         base.Die();
-        path.enabled = false;
-        com.enabled = false;
-        agent.baseOffset = 0;
+        _path.enabled = false;
+        _com.enabled = false;
+        _agent.baseOffset = 0;
         animator.SetBool("Die", true);
         Destroy(gameObject, 2.6f);
     }
 
     private void Awake()
     {
-        path = GetComponent<Pathfinding>();
-        com = GetComponent<CombatAI>();
-        agent = GetComponent<NavMeshAgent>();
+        _path = GetComponent<Pathfinding>();
+        _com = GetComponent<CombatAI>();
+        _agent = GetComponent<NavMeshAgent>();
         isenemy = true;
     }
 

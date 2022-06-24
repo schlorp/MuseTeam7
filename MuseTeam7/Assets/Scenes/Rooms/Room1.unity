@@ -617,13 +617,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7399647709939935260, guid: eaf7c84b76aafac4d9889b7789dd67e7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7399647709939935260, guid: eaf7c84b76aafac4d9889b7789dd67e7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.70000076
+      objectReference: {fileID: 0}
     - target: {fileID: 8509919759573626833, guid: eaf7c84b76aafac4d9889b7789dd67e7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 116.2296
       objectReference: {fileID: 0}
     - target: {fileID: 8509919759573626833, guid: eaf7c84b76aafac4d9889b7789dd67e7, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 15
+      value: 9.6935
       objectReference: {fileID: 0}
     - target: {fileID: 8509919759573626833, guid: eaf7c84b76aafac4d9889b7789dd67e7, type: 3}
       propertyPath: m_LocalScale.x
@@ -639,11 +647,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8509919759573626833, guid: eaf7c84b76aafac4d9889b7789dd67e7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -820.25
+      value: -816.7
       objectReference: {fileID: 0}
     - target: {fileID: 8509919759573626833, guid: eaf7c84b76aafac4d9889b7789dd67e7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 519.25
+      value: 519.8
       objectReference: {fileID: 0}
     - target: {fileID: 9071450134110425302, guid: eaf7c84b76aafac4d9889b7789dd67e7, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1084,6 +1092,18 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1040242099}
+    - target: {fileID: 4546788467774685952, guid: cbd34d64355d9174d8a48b4cd89bbb0c, type: 3}
+      propertyPath: _healthBar
+      value: 
+      objectReference: {fileID: 1040242099}
+    - target: {fileID: 4954012180784409038, guid: cbd34d64355d9174d8a48b4cd89bbb0c, type: 3}
+      propertyPath: _PickupRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954012180784409038, guid: cbd34d64355d9174d8a48b4cd89bbb0c, type: 3}
+      propertyPath: _throwingForce
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4954012180939861166, guid: cbd34d64355d9174d8a48b4cd89bbb0c, type: 3}
       propertyPath: interactImage
       value: 
@@ -2137,10 +2157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef40133362a2fb3448b6ea16906cc22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rooms:
-  - Room1
-  - Room2
-  - Room3
+  _rooms: []
 --- !u!4 &1719918606
 Transform:
   m_ObjectHideFlags: 0

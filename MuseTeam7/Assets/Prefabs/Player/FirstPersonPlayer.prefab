@@ -212,13 +212,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4bcde36ff6bec9428f88cc906c8c8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickupLayer:
+  _PickupLayer:
     serializedVersion: 2
-    m_Bits: 256
-  PlayerCam: {fileID: 2811399165712341535}
-  throwingForce: 10
-  PickupRange: 10
-  Hand: {fileID: 7554129015224342110}
+    m_Bits: 0
+  _PlayerCam: {fileID: 2811399165712341535}
+  _throwingForce: 2
+  _PickupRange: 2
+  _Hand: {fileID: 7554129015224342110}
 --- !u!114 &4546788467774685952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,9 +231,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a55238723525264493709097fe3d735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starthealth: 100
-  health: 0
-  healthBar: {fileID: 0}
+  _starthealth: 100
+  _health: 0
+  _healthBar: {fileID: 0}
   isenemy: 0
 --- !u!114 &5734270450979235874
 MonoBehaviour:
@@ -478,12 +478,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4451328877987014881}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2882631cab79d4845b3a65dc2ab14928, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a8c3866ed86b8447842fef633c211c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasFirstKey: 0
-  hasSecondKey: 0
-  hasThirdKey: 0
 --- !u!1 &5927378410814650612
 GameObject:
   m_ObjectHideFlags: 0

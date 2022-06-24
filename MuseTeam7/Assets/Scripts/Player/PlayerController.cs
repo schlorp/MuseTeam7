@@ -87,7 +87,6 @@ public class PlayerController : MonoBehaviour
         {
             controller.height = crouchingHeight;
             speed *= crouchMultiplier;
-            Debug.Log("Crouching");
         }
         else
         {
@@ -97,7 +96,6 @@ public class PlayerController : MonoBehaviour
         if (isSprinting == true) // move speed while sprinting
         {
             speed *= sprintMultiplier;
-            Debug.Log("sprinting");
             if (speed > 24f)
             {
                 speed = 24f;

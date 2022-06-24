@@ -10,6 +10,9 @@ public class GameOver : MonoBehaviour
     {
         SceneManager.LoadScene("Game Over");
     }
-
+    public static void Back()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 
 }

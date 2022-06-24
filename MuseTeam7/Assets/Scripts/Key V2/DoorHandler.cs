@@ -16,6 +16,7 @@ public class DoorHandler : MonoBehaviour
 
     public void ChangeDoorState()
 	{
+        FindObjectOfType<audioManager>().Play("Open");
         open = !open;
 	}
 

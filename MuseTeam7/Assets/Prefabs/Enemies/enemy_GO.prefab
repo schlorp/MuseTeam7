@@ -49,15 +49,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionradius: 20
-  detectionmask:
+  _detectionmask:
     serializedVersion: 2
     m_Bits: 64
   minimumdetectionangle: -25
   maximumdetectionangle: 25
   sprintspeed: 20
-  damage: 50
-  attackradius: 2
-  attacktime: 2.6
+  _damage: 50
+  _attackradius: 2
+  _attacktime: 2.6
   scan: 1
   animator: {fileID: 3244640293121711634}
 --- !u!114 &3244640292156326746
@@ -72,8 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d35d211e346238f46b508f61196e1019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypointradius: 10
-  raycastshot: 0
+  _waypointradius: 20
+  _raycastshot: 0
   seenplayer: 0
 --- !u!114 &3244640292156326747
 MonoBehaviour:
@@ -87,9 +87,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b99f6859d933a469cf723f086b60c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starthealth: 50
-  health: 0
-  healthBar: {fileID: 0}
+  _starthealth: 100
+  _health: 0
+  _healthBar: {fileID: 0}
   isenemy: 0
   animator: {fileID: 3244640293121711634}
 --- !u!195 &3244640292156326743
@@ -111,7 +111,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 2
+  m_BaseOffset: 2.1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1001 &3244640293121711636

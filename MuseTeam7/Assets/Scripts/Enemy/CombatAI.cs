@@ -116,6 +116,7 @@ public class CombatAI : MonoBehaviour
             {
                
                 move = false;
+                FindObjectOfType<audioManager>().Play("Screech");
                 StartCoroutine(Attack(colliders[i].gameObject));
             }
         }

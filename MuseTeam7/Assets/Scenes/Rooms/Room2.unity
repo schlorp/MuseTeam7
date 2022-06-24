@@ -4843,6 +4843,19 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 6c2ccc0de51e8384da884287e5977cac, type: 3}
     volume: 1
     pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - ClipName: EnemyWalk
+    clip: {fileID: 8300000, guid: 49f86ad4501c6fc4db9a888b3c2169ee, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - ClipName: Screech
+    clip: {fileID: 8300000, guid: bd9cbc2ebeedf0349b43594df563f3fa, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
 --- !u!4 &1421561014
 Transform:

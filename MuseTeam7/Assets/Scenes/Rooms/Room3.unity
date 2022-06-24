@@ -29701,6 +29701,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 474068657}
+    - target: {fileID: 4546788467774685952, guid: cbd34d64355d9174d8a48b4cd89bbb0c, type: 3}
+      propertyPath: _healthBar
+      value: 
+      objectReference: {fileID: 474068657}
     - target: {fileID: 4954012180939861166, guid: cbd34d64355d9174d8a48b4cd89bbb0c, type: 3}
       propertyPath: interactImage
       value: 
@@ -41300,10 +41304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef40133362a2fb3448b6ea16906cc22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rooms:
-  - Room1
-  - Room2
-  - Room3
+  _rooms: []
 --- !u!4 &1719918606
 Transform:
   m_ObjectHideFlags: 0

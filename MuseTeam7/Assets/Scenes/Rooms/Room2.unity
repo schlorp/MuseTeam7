@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1658354581}
-  ReadyScreen: {fileID: 0}
+  ReadyScreen: {fileID: 1860301902}
   OptionsUI: {fileID: 80870532}
 --- !u!1 &62754872 stripped
 GameObject:
@@ -1794,6 +1794,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: korte muren
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 01d238d8f2a8f4cdaaf99480eed3764a, type: 3}
+      propertyPath: m_TagString
+      value: unwalkable
+      objectReference: {fileID: 0}
     - target: {fileID: 1046862223006137902, guid: 01d238d8f2a8f4cdaaf99480eed3764a, type: 3}
       propertyPath: m_TagString
       value: unwalkable
@@ -2545,6 +2549,14 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 219549895}
+    - target: {fileID: 4546788467774685952, guid: cbd34d64355d9174d8a48b4cd89bbb0c, type: 3}
+      propertyPath: _healthBar
+      value: 
+      objectReference: {fileID: 219549895}
+    - target: {fileID: 4546788467774685952, guid: cbd34d64355d9174d8a48b4cd89bbb0c, type: 3}
+      propertyPath: _starthealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4954012180939861166, guid: cbd34d64355d9174d8a48b4cd89bbb0c, type: 3}
       propertyPath: interactImage
       value: 
@@ -5863,7 +5875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e75147f9a57284e12a92aac28a5dce64, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: unwalkable
       objectReference: {fileID: 0}
     - target: {fileID: 998766098008543121, guid: e75147f9a57284e12a92aac28a5dce64, type: 3}
       propertyPath: m_TagString
@@ -6990,8 +7002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef40133362a2fb3448b6ea16906cc22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rooms: []
-  InvData: {fileID: 11400000, guid: 9620eb7b54201c449b1e200d254276c4, type: 2}
+  _rooms: []
 --- !u!4 &1802183217
 Transform:
   m_ObjectHideFlags: 0
@@ -7083,6 +7094,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1455756734629308799, guid: 01d238d8f2a8f4cdaaf99480eed3764a, type: 3}
+--- !u!1 &1860301902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1860301903}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1860301903
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860301902}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 27.090963, y: 16.67612, z: -41.27}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1920876331 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -197087754244102512, guid: 01d238d8f2a8f4cdaaf99480eed3764a, type: 3}
@@ -7451,10 +7493,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3244640292156326743, guid: 37829d2fdd2a5f7459ae8a5f2ba5abe4, type: 3}
-      propertyPath: m_BaseOffset
-      value: 2.1
-      objectReference: {fileID: 0}
     - target: {fileID: 3244640292156326744, guid: 37829d2fdd2a5f7459ae8a5f2ba5abe4, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -7498,10 +7536,6 @@ PrefabInstance:
     - target: {fileID: 3244640292156326744, guid: 37829d2fdd2a5f7459ae8a5f2ba5abe4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3244640292156326746, guid: 37829d2fdd2a5f7459ae8a5f2ba5abe4, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3244640292156326746, guid: 37829d2fdd2a5f7459ae8a5f2ba5abe4, type: 3}
       propertyPath: waypointradius

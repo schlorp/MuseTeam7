@@ -48,12 +48,36 @@ MonoBehaviour:
   - ClipName: PlayerDeath
     clip: {fileID: 8300000, guid: 6c2ccc0de51e8384da884287e5977cac, type: 3}
     volume: 1
-    pitch: 0.1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - ClipName: Theme
     clip: {fileID: 8300000, guid: cc73053945a07f84b96a61e07039f1d0, type: 3}
+    volume: 0.01
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - ClipName: Locked
+    clip: {fileID: 8300000, guid: 29759ce429d67be40bc07e350fb30cde, type: 3}
     volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - ClipName: Open
+    clip: {fileID: 8300000, guid: a500cab79bef11345aa827afc85ee4a9, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - ClipName: EnemyWalk
+    clip: {fileID: 8300000, guid: 49f86ad4501c6fc4db9a888b3c2169ee, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - ClipName: ResortBack
+    clip: {fileID: 8300000, guid: a5c5698cfb9fb5641b64937e6787b112, type: 3}
+    volume: 0.5
     pitch: 1
     loop: 1
     source: {fileID: 0}

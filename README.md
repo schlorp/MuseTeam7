@@ -29,7 +29,7 @@ Het spel speelt zich af in een soort resort, waarin guards rondlopen die je moet
 | ------ |  ------ |
 | Sprint retrospective verslagen (pdf)  | [RetrospectiveVerslagen](https://github.com/schlorp/MuseTeam7/blob/main/Documents/Sprint%20retrospectives.pdf)
 | Sprint review verslagen (pdf)         | [ReviewVerslagen](https://github.com/schlorp/MuseTeam7/blob/main/Documents/Sprint%20reviews.pdf)
-| Link naar online speelbaar prototype  | [build](https://github.com/schlorp/MuseTeam7/blob/Room1EnemyInteraction/Builds/Build3.7z)
+| Link naar online speelbaar prototype  | [build](https://github.com/schlorp/MuseTeam7/releases/tag/game)
 | Logboek (pdf)                         | [Logboek](https://github.com/schlorp/MuseTeam7/blob/main/Documents/Logboek%20Muse%20Project.pdf)
 |<img width=500/>|<img width=300/>|
 

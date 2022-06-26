@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Dogcounter : MonoBehaviour
 {
-   public static Dogcounter instance;
+    public static Dogcounter instance;
     public int deadDogs;
 
-    private void Awake()
+	private void Awake()
     {
         if (instance != null)
         {

@@ -238,7 +238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 39.4591, y: -364}
+  m_AnchoredPosition: {x: -3.0000076, y: -403.9788}
   m_SizeDelta: {x: 462.8434, y: 127.7895}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &275092318
@@ -486,7 +486,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 39.4591, y: -185}
+  m_AnchoredPosition: {x: -3.0000076, y: -224.97879}
   m_SizeDelta: {x: 462.8434, y: 127.7895}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &509017274
@@ -619,7 +619,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 39.4591, y: -10.0212}
+  m_AnchoredPosition: {x: -3, y: -50}
   m_SizeDelta: {x: 462.8434, y: 127.7895}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1193576811
@@ -914,27 +914,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3737123153259174841, guid: 64df4d7d1bf5af044b4de4353a9c1566, type: 3}
       propertyPath: sounds.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3737123153259174841, guid: 64df4d7d1bf5af044b4de4353a9c1566, type: 3}
-      propertyPath: sounds.Array.data[6].clip
+      propertyPath: sounds.Array.data[7].clip
       value: 
-      objectReference: {fileID: 8300000, guid: bd9cbc2ebeedf0349b43594df563f3fa, type: 3}
+      objectReference: {fileID: 8300000, guid: 5666927c0862876449f6d7bdcdb4e920, type: 3}
     - target: {fileID: 3737123153259174841, guid: 64df4d7d1bf5af044b4de4353a9c1566, type: 3}
-      propertyPath: sounds.Array.data[6].loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3737123153259174841, guid: 64df4d7d1bf5af044b4de4353a9c1566, type: 3}
-      propertyPath: sounds.Array.data[6].pitch
+      propertyPath: sounds.Array.data[7].pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3737123153259174841, guid: 64df4d7d1bf5af044b4de4353a9c1566, type: 3}
-      propertyPath: sounds.Array.data[6].volume
+      propertyPath: sounds.Array.data[7].volume
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3737123153259174841, guid: 64df4d7d1bf5af044b4de4353a9c1566, type: 3}
-      propertyPath: sounds.Array.data[6].ClipName
-      value: Screech
+      propertyPath: sounds.Array.data[7].ClipName
+      value: Dog_Death
       objectReference: {fileID: 0}
     - target: {fileID: 3737123153259174842, guid: 64df4d7d1bf5af044b4de4353a9c1566, type: 3}
       propertyPath: m_RootOrder

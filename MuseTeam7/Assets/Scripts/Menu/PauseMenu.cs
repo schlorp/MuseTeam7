@@ -15,7 +15,7 @@ public class PauseMenu : MonoBehaviour
 	{
         ReadyScreen.SetActive(true);
         Freeze();
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
 
@@ -27,11 +27,16 @@ public class PauseMenu : MonoBehaviour
             if (isPaused)
 			{
                 Resume(); // resumes the game if paused
+                Cursor.lockState = CursorLockMode.None;
+
+                Cursor.visible = false;
 			}
             else
 			{
                 Pause(); // pauses the game
-			}
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
 		}
     }
 

@@ -9,6 +9,7 @@ TagManager:
   - InteractiveObject
   - Door
   - Key
+  - Death
   layers:
   - Default
   - TransparentFX

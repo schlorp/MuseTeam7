@@ -31,6 +31,37 @@ Transform:
   m_Father: {fileID: 2811399165712341534}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2303585323773608908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6497845407747378260}
+  m_Layer: 0
+  m_Name: Kickpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6497845407747378260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2303585323773608908}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.7019999, z: -0.00999999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2811399164955306534}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2811399164480045775
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,6 +183,7 @@ Transform:
   - {fileID: 2811399166271946726}
   - {fileID: 187286064767737663}
   - {fileID: 987608473735694872}
+  - {fileID: 6497845407747378260}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -215,10 +247,10 @@ MonoBehaviour:
   _PickupLayer:
     serializedVersion: 2
     m_Bits: 0
-  _PlayerCam: {fileID: 2811399165712341535}
-  _throwingForce: 2
-  _PickupRange: 2
-  _Hand: {fileID: 7554129015224342110}
+  _PlayerCam: {fileID: 0}
+  _throwingForce: 0
+  _PickupRange: 0
+  _Hand: {fileID: 0}
 --- !u!114 &4546788467774685952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a55238723525264493709097fe3d735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _starthealth: 100
+  _starthealth: 0
   _health: 0
   _healthBar: {fileID: 0}
   isenemy: 0

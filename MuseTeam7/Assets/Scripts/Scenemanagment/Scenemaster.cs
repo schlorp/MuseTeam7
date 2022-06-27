@@ -62,6 +62,11 @@ public class Scenemaster : MonoBehaviour
         SceneManager.LoadScene("ReadyResort");
     }
 
+    public void Win()
+	{
+        SceneManager.LoadScene("Win");
+	}
+
     public void EditData()
     {
         InventoryObject.instance.HP = player.GetComponent<PlayerHealth>().GetHealth();

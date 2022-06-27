@@ -23,4 +23,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu-UI/Options.unity
     guid: 0433e19e59db40f48a02796ad999a366
+  - enabled: 1
+    path: Assets/Scenes/Menu-UI/Room3GameOver.unity
+    guid: 8aba410d6965105478b47bb637681a8a
+  - enabled: 1
+    path: Assets/Scenes/Menu-UI/GameOver.unity
+    guid: 3c37cd1ec9f2fcf4787ad1f951a876d4
+  - enabled: 1
+    path: Assets/Scenes/Menu-UI/ReadyResort.unity
+    guid: 9d61bbdff171f364e939203f9de5a0fe
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: c64b217b3e5008a46ad5509c93b58b1d
   m_configObjects: {}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -34,21 +35,27 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume() // resume function
 	{
+        FindObjectOfType<audioManager>().Play("Theme");
+        FindObjectOfType<audioManager>().ResumeMusic();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f; // resumes game
         isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
-    void Freeze() // freezes game on start
+    public void Freeze() // freezes game on start
 	{
+        FindObjectOfType<audioManager>().PauseMusic();
         Time.timeScale = 0f;
         isPaused = true;
         Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
 	}
      
     void Pause()
-	{
+	{   
+        FindObjectOfType<audioManager>().PauseMusic();
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f; // freezes game
         isPaused = true;
@@ -71,6 +78,7 @@ public class PauseMenu : MonoBehaviour
 	{
         Debug.Log("Start Game");
         ReadyScreen.SetActive(false);
+        Cursor.visible = false;
         Resume();
     }
 
@@ -92,4 +100,6 @@ public class PauseMenu : MonoBehaviour
 	{
         OptionsUI.SetActive(false);
     }
+
+    
 }

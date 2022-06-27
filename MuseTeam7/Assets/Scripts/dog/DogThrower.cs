@@ -42,7 +42,10 @@ public class DogThrower : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Death"))
         {
+            FindObjectOfType<audioManager>().Play("Dog_Death");
+            FindObjectOfType<audioManager>().RandomSounds();
             Dogcounter.instance.deadDogs += 1;
+            Score.scoreValue += 1;
             Instantiate(deatheffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }

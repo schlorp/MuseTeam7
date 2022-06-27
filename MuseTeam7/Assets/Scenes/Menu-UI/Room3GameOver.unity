@@ -248,11 +248,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 830615430}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed6c65ed013fd346957f8a5356c8aaf, type: 3}
+  m_Script: {fileID: 11500000, guid: 22de1f8f1c6d0df43be0d6e172bc0923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadDogs: 0
-  killScore: {fileID: 1493280321}
+  score: {fileID: 1493280321}
 --- !u!1 &1023571977
 GameObject:
   m_ObjectHideFlags: 0

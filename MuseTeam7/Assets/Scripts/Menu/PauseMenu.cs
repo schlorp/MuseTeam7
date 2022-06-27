@@ -15,6 +15,8 @@ public class PauseMenu : MonoBehaviour
 	{
         ReadyScreen.SetActive(true);
         Freeze();
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
 
 	// Update is called once per frame
@@ -49,8 +51,7 @@ public class PauseMenu : MonoBehaviour
         FindObjectOfType<audioManager>().PauseMusic();
         Time.timeScale = 0f;
         isPaused = true;
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
+       
 	}
      
     void Pause()
@@ -59,7 +60,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f; // freezes game
         isPaused = true;
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
 
     public void LoadMenu() // loads menu

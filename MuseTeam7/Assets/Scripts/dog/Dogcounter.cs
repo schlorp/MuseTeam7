@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Dogcounter : MonoBehaviour
 {
-   public static Dogcounter instance;
+    public static Dogcounter instance;
     public int deadDogs;
+    public TextMeshProUGUI killScore;
 
-    private void Awake()
+	private void Awake()
     {
         if (instance != null)
         {
@@ -17,4 +20,10 @@ public class Dogcounter : MonoBehaviour
         instance = this;
         deadDogs = 0;
     }
+
+	private void Update()
+	{
+        killScore.text = deadDogs.ToString();
+	}
+
 }

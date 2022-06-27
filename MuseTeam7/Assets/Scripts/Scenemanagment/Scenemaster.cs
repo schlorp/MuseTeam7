@@ -26,7 +26,7 @@ public class Scenemaster : MonoBehaviour
     }
     public void Options()
 	{
-        //SceneManager.LoadScene("Options");
+        SceneManager.LoadScene("Options");
         Debug.Log("Loads options");
 	}
 
@@ -46,10 +46,20 @@ public class Scenemaster : MonoBehaviour
         SceneManager.LoadScene("Room3");
         EditData();
     }
+
+    public void Main()
+    {
+        SceneManager.LoadScene("Menu");
+        EditData();
+    }
     public void Exit() // exits the game
     {
         Debug.Log("Quiting!");
         Application.Quit();
+    }
+    public void readyScene() // exits the game
+    {
+        SceneManager.LoadScene("ReadyResort");
     }
 
     public void EditData()

@@ -28,12 +28,6 @@ public class PlayerController : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     bool isGrounded;
-
- 
-
-    //[Header("Interaction")]
- 
-
     private void Start()
     {
 

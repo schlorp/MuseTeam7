@@ -87,3 +87,18 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - ClipName: Dog_Death
+    clip: {fileID: 8300000, guid: 5666927c0862876449f6d7bdcdb4e920, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  aSounds:
+  - {fileID: 8300000, guid: 3280b76f0d484fb4398c882110ba841a, type: 3}
+  - {fileID: 8300000, guid: d75de9eab4477924b9bfdcd89e1d87b2, type: 3}
+  - {fileID: 8300000, guid: c8629ff4594f17240a5da99fa0fbd62c, type: 3}
+  - {fileID: 8300000, guid: abda47282529b544fb1b4790f06c2cc5, type: 3}
+  - {fileID: 8300000, guid: 6411221f559ad6a4da5c8955a17ba1e3, type: 3}
+  - {fileID: 8300000, guid: b7bcde0b0f50a2f4eb1d9f99efbfdbca, type: 3}
+  - {fileID: 8300000, guid: 9289e2d6408e8e147849a6a7ea10fddb, type: 3}
+  - {fileID: 8300000, guid: d6f012bc86b932140995d3224456f669, type: 3}

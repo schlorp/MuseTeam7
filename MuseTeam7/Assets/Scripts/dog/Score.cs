@@ -16,7 +16,7 @@ public class Score : MonoBehaviour
 
 	private void Update()
 	{
-		score.text = scoreValue.ToString();
-		//score.text = "Dead dogs : " + scoreValue;
+		//score.text = scoreValue.ToString();
+		score.text = "Dead dogs : " + scoreValue;
 	}
 }

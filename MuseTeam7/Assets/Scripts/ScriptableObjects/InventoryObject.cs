@@ -21,5 +21,8 @@ public class InventoryObject : MonoBehaviour
         HP = 100;
         keys = new bool[3];
         DontDestroyOnLoad(gameObject);
-    }
+
+      
+    }  
+   
 }

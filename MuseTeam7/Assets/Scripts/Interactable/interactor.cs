@@ -67,7 +67,7 @@ public class interactor : MonoBehaviour
             {
                 interactImage.sprite = defaultIcon;
                 interactImage.rectTransform.sizeDelta = defaultIconSize;
-                Debug.Log("default");
+                Debug.Log("default");   
             }
         }
     }

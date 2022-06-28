@@ -36,6 +36,7 @@ public class DoorOpener : MonoBehaviour
 				{
                     Inventory.keys[hit.collider.GetComponent<Key>().index] = true; // looks what index key has and changes the bool to true
                     Destroy(hit.collider.gameObject);
+                    FindObjectOfType<InventoryObject>().keys[1] = true;
 				}
 			}
 		}    

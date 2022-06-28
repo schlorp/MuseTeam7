@@ -21,9 +21,5 @@ public class Dogcounter : MonoBehaviour
         deadDogs = 0;
     }
 
-	private void Update()
-	{
-        killScore.text = deadDogs.ToString();
-	}
-
+	
 }

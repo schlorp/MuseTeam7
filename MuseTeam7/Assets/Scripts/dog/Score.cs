@@ -16,6 +16,7 @@ public class Score : MonoBehaviour
 
 	private void Update()
 	{
+		scoreValue = Dogcounter.instance.deadDogs;
 		//score.text = scoreValue.ToString();
 		score.text = "Dead dogs : " + scoreValue;
 	}

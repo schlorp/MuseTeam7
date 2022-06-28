@@ -375,41 +375,6 @@ MonoBehaviour:
   pauseMenuUI: {fileID: 1207638729}
   ReadyScreen: {fileID: 745782386}
   OptionsUI: {fileID: 1482891768}
---- !u!1 &174098363 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5933665781234494896, guid: dc56fa0b5c727054787a3b243382bb0b, type: 3}
-  m_PrefabInstance: {fileID: 1247786733}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &174098368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 174098363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c1b29d52ad17e248afc2242b295f1e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1719918605}
-        m_TargetAssemblyTypeName: Scenemaster, Assembly-CSharp
-        m_MethodName: Home
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  interactIcon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  iconSize: {x: 20, y: 20}
-  ID: 0
 --- !u!114 &213741767 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2351468755762270558, guid: eaf7c84b76aafac4d9889b7789dd67e7, type: 3}
@@ -1150,6 +1115,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3739312392427388733, guid: dc56fa0b5c727054787a3b243382bb0b, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1719918605}
     - target: {fileID: 3885824839050520659, guid: dc56fa0b5c727054787a3b243382bb0b, type: 3}
       propertyPath: m_Layer
       value: 7

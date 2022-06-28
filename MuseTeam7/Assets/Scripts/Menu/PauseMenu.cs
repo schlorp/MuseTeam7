@@ -14,9 +14,9 @@ public class PauseMenu : MonoBehaviour
 	private void Start()
 	{
         ReadyScreen.SetActive(true);
-        Freeze();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        Freeze();
     }
 
 	// Update is called once per frame

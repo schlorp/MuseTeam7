@@ -2782,7 +2782,7 @@ PrefabInstance:
       objectReference: {fileID: 219549895}
     - target: {fileID: 4546788467774685952, guid: cbd34d64355d9174d8a48b4cd89bbb0c, type: 3}
       propertyPath: _starthealth
-      value: 2147483647
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4954012180939861166, guid: cbd34d64355d9174d8a48b4cd89bbb0c, type: 3}
       propertyPath: interactImage
